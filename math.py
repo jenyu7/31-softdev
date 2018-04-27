@@ -7,6 +7,8 @@ Period 7 SoftDev
 '''
 
 def intersection(a, b):
+    if len(a) > len(b):
+        return intersection(b,a)
     return [x for x in a if x in b]
 
 def union(a, b):
@@ -31,3 +33,7 @@ print union(a, b) #[1, 2, 3, 4, 6, 8] (may be in different order)
 print set_diff(a, b) #[1, 3]
 print sym_diff(a, b) #[1, 3, 6, 8]
 print cartesian(a, b) #set of all possible combinations
+
+a = [1, 2, 3]
+b = [2, 3, 1, 2, 3, 1]
+print intersection(a, b) #[1, 2, 3]
